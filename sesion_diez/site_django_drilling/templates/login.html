@@ -1,0 +1,20 @@
+<!--Se crea login.html (Drilling, sesión 8)-->
+{%include 'navbar.html' %}
+{% block content %} 
+    {% load crispy_forms_tags %}
+
+<!--Login-->
+<div class="container py-5">
+     <h1>Login</h1>
+      <form method="POST">
+         {% csrf_token %} 
+         {{ login_form|crispy }} 
+         <button class="btn btn-primary" type="submit">Login</button> 
+      </form> 
+      <p class="text-center"> 
+        Si no tienes una cuenta, registrate en 
+        <a href="/registro">Registro</a>, para crear una cuenta
+      </p>
+</div> 
+
+{% endblock %}

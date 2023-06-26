@@ -1,0 +1,29 @@
+<!--Creación de inputbook.html, usando models.py(Drilling, sesión 7)-->
+
+{% load bootstrap5 %}
+{% bootstrap_css %}     
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+{% block content %}
+<div class="i-am-centered"> 
+  <form action="" method="POST"> 
+      {% csrf_token %}  
+      <div class="form-group mb-3 w-30">
+          <label>Titulo:</label> 
+            {{form.titulo}}
+          
+      </div> 
+      <div class="form-group mb-3 w-30"> 
+          <label>Autor:</label> 
+          {{form.autor}}
+          
+      </div> 
+      <div class="form-group mb-3 w-30"> 
+          <label>Valoracion:</label> 
+         {{form.valoracion}} 
+          
+      </div> 
+      <input type="submit" class="btn btn-primary" value="Enviar"> 
+  </form> 
+</div> 
+{% endblock  %}

@@ -1,0 +1,41 @@
+C:\Users\lalar>virtualenv --version
+virtualenv 20.23.0 from C:\Users\lalar\AppData\Local\Programs\Python\Python311\Lib\site-packages\virtualenv\__init__.py
+
+C:\Users\lalar>cd Desktop
+
+C:\Users\lalar\Desktop>cd fullstack_python_026\modulo_6\django_project
+
+C:\Users\lalar\Desktop\fullstack_python_026\modulo_6\django_project>pip list
+Package               Version
+--------------------- -------
+distlib               0.3.6
+filelock              3.12.1
+pip                   23.1.2
+platformdirs          3.5.3
+setuptools            65.5.0
+virtualenv            20.23.0
+virtualenvwrapper-win 1.2.7
+
+C:\Users\lalar\Desktop\fullstack_python_026\modulo_6\django_project>mkvirtualenv proyecto_django
+created virtual environment CPython3.11.4.final.0-64 in 896ms
+  creator CPython3Windows(dest=C:\Users\lalar\Envs\proyecto_django, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=C:\Users\lalar\AppData\Local\pypa\virtualenv)
+    added seed packages: pip==23.1.2, setuptools==67.7.2, wheel==0.40.0
+  activators BashActivator,BatchActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+
+(proyecto_django) C:\Users\lalar\Desktop\fullstack_python_026\modulo_6\django_project>py -m pip install Django
+Collecting Django
+  Using cached Django-4.2.2-py3-none-any.whl (8.0 MB)
+Collecting asgiref<4,>=3.6.0 (from Django)
+  Using cached asgiref-3.7.2-py3-none-any.whl (24 kB)
+Collecting sqlparse>=0.3.1 (from Django)
+  Using cached sqlparse-0.4.4-py3-none-any.whl (41 kB)
+Collecting tzdata (from Django)
+  Using cached tzdata-2023.3-py2.py3-none-any.whl (341 kB)
+Installing collected packages: tzdata, sqlparse, asgiref, Django
+Successfully installed Django-4.2.2 asgiref-3.7.2 sqlparse-0.4.4 tzdata-2023.3
+
+(proyecto_django) C:\Users\lalar\Desktop\fullstack_python_026\modulo_6\django_project>django-admin --version
+4.2.2
+
+(proyecto_django) C:\Users\lalar\Desktop\fullstack_python_026\modulo_6\django_project>pip help

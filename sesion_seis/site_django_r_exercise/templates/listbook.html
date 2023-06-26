@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lange="en">
+<head>
+</head>
+<body>
+<h3>Libros con valoracion mayor a 1500: </h3>
+<!--Se usa bucle for para obter datos dentro de libro-->
+{% for libro in libros %}
+    <!--Se usa la condicional if para obtener los libros con valoración mayor a 1500-->
+    {% if libro.valoracion > 1500 %}
+       <li>Titulo: {{ libro.titulo }}, Autor: {{ libro.autor }}, Valoracion: {{ libro.valoracion }}</li>
+    {% endif %}
+  
+{% endfor%}
+
+<h3>Listado de todos los libros: </h3>
+<!--Se usa bucle for para obtener lista de los todos los libros-->
+{% for libro in libros %}
+   
+    <li>Titulo: {{ libro.titulo }}, Autor: {{ libro.autor }}</li>
+   
+{% endfor%}
+    
+
+
+</body>
+</html>

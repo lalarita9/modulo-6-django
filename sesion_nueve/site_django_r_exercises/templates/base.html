@@ -1,0 +1,30 @@
+<!--Creación de base.html, con la estructura básica de "HTML" (Drilling, sesión 5)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERMISOS DE USUSARIO</title>
+    <!--Bootstrap 5-->
+    {% load bootstrap5 %}
+    <!--Bootstrap CSS-->
+    {% bootstrap_css %}  
+    <!--Bootstrap JSS-->   
+    {% bootstrap_javascript %}
+    <!--Bootstrap Messages-->
+    {% bootstrap_messages %}
+</head>
+<body>
+    
+    {% block nav %}
+    {%include 'navbar.html' %}
+    {% endblock nav %}
+
+    {% block content %}
+    {% endblock content %}
+    
+    {% block pie %}
+    {% include 'footer.html' %}
+    {% endblock pie %}
+</body>
+</html>
