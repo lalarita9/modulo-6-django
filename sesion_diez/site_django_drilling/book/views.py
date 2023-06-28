@@ -88,19 +88,11 @@ def registro_book(request):
                 codename='development',
                 content_type=content_type
             )
-            add_book = Permission.objects.get(
-                codename='add_bookmodel',
-                content_type=content_type
-            )
-            view_book = Permission.objets.get(
-                codename='view_bookmodel',
-                content_type=content_type
-            )
             user = form.save()
             #Se agrega permiso al usuario
-            user.user_permissions.add(development, add_book, view_book)
-            user.is_staff = True
+            user.user_permissions.add(development)
             #Sí está correcto el usuario, se usará login para que él inicié su sesión
+           
             login(request, user)
             messages.success(request, "Registrado Satisfactoriamente.")
             return HttpResponseRedirect('/navbar')
@@ -136,4 +128,4 @@ def login_book(request):
 def logout_book(request):
     logout(request)
     messages.info(request, "Se ha cerrado la sesión satisfactoriamente")
-    return HttpResponseRedirect('/login')
+    return HttpResponseRedirect('/navbar')

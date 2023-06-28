@@ -1,9 +1,8 @@
 <!--Creación de inputbook.html, usando models.py(Drilling, sesión 7)-->
+<!--Se agrega herencia plantilla base.html(Drilling, sesión 11)-->
 
-{% load bootstrap5 %}
-{% bootstrap_css %}     
-{% bootstrap_javascript %}
-{% bootstrap_messages %}
+{% extends 'base.html' %}
+
 {% block content %}
 <div class="i-am-centered"> 
   <form action="" method="POST"> 
@@ -20,7 +19,7 @@
       </div> 
       <div class="form-group mb-3 w-30"> 
           <label>Valoracion:</label> 
-         {{form.valoracion}} 
+         {{form.valoracion}} <span>Valor entre 0 y 10000
           
       </div> 
       <input type="submit" class="btn btn-primary" value="Enviar"> 

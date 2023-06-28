@@ -81,6 +81,7 @@ def registro_book(request):
         form = RegistroUsuarioForm(request.POST)
         #Segundo if para verificar que la información esté correcta
         if form.is_valid():
+            user = form.save()
             #Se obtiene el content_type del módelo(Drilling, sesión 9)
             content_type = ContentType.objects.get_for_model(BookModel)
             #Se obtiene el permiso a asignar
@@ -88,10 +89,19 @@ def registro_book(request):
                 codename='development',
                 content_type=content_type
             )
-            user = form.save()
+            add_book = Permission.objects.get(
+                codename='add_bookmodel',
+                content_type=content_type
+            )
+            view_book = Permission.objects.get(
+                codename='view_bookmodel',
+                content_type=content_type
+            )
             #Se agrega permiso al usuario
-            user.user_permissions.add(development)
+            user.is_staff = True
+            user.user_permissions.add(development, add_book, view_book)
             #Sí está correcto el usuario, se usará login para que él inicié su sesión
+            user = form.save()
             login(request, user)
             messages.success(request, "Registrado Satisfactoriamente.")
             return HttpResponseRedirect('/navbar')
@@ -127,4 +137,4 @@ def login_book(request):
 def logout_book(request):
     logout(request)
     messages.info(request, "Se ha cerrado la sesión satisfactoriamente")
-    return HttpResponseRedirect('/navbar')
+    return HttpResponseRedirect('/login')
